@@ -10,11 +10,12 @@ class TestCaseCreatedoc(HttpRunner):
     config = (
         Config("testcase description")
         .verify(False)
-        .base_url("https://mubu.com")
+        .base_url("https://$host")
         .variables(**{
             "phone": "18613143458",
             "password": "msFrwx$!kz3RTRm@Q*pV",
-            "memberId": "${gen_member_id()}"
+            "memberId": "${gen_member_id()}",
+            "host": "mubu.com",
         })
     )
 
@@ -68,7 +69,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
                     "accept-encoding": "gzip, deflate, br",
                     "accept-language": "en-US,en;q=0.9",
-                    "referer": "https://mubu.com/",
+                    "referer": "https://${host}/",
                     "sec-fetch-dest": "document",
                     "sec-fetch-mode": "navigate",
                     "sec-fetch-site": "same-origin",
@@ -109,7 +110,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
                     "accept-encoding": "gzip, deflate, br",
                     "accept-language": "en-US,en;q=0.9",
-                    "referer": "https://mubu.com/login",
+                    "referer": "https://${host}/login",
                     "sec-fetch-dest": "document",
                     "sec-fetch-mode": "navigate",
                     "sec-fetch-site": "same-origin",
@@ -152,8 +153,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-language": "en-US,en;q=0.9",
                     "content-length": "65",
                     "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/login/password",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/login/password",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
@@ -198,7 +199,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
                     "accept-encoding": "gzip, deflate, br",
                     "accept-language": "en-US,en;q=0.9",
-                    "referer": "https://mubu.com/login/password",
+                    "referer": "https://${host}/login/password",
                     "phone": "$phone",
                     "sec-fetch-dest": "document",
                     "sec-fetch-mode": "navigate",
@@ -243,8 +244,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-encoding": "gzip, deflate, br",
                     "accept-language": "en-US,en;q=0.9",
                     "content-length": "0",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/list",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/list",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
@@ -291,8 +292,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-language": "en-US,en;q=0.9",
                     "content-length": "38",
                     "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/list",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/list",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
@@ -338,8 +339,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-encoding": "gzip, deflate, br",
                     "accept-language": "en-US,en;q=0.9",
                     "content-length": "0",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/list",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/list",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
@@ -386,8 +387,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-language": "en-US,en;q=0.9",
                     "content-length": "17",
                     "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/list",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/list",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
@@ -434,7 +435,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
                     "accept-encoding": "gzip, deflate, br",
                     "accept-language": "en-US,en;q=0.9",
-                    "referer": "https://mubu.com/list",
+                    "referer": "https://${host}/list",
                     "sec-fetch-dest": "document",
                     "sec-fetch-mode": "navigate",
                     "sec-fetch-site": "same-origin",
@@ -471,7 +472,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/user/current_user")
-            .post("https://api2.mubu.com/v3/api/user/current_user")
+            .post("https://api2.${host}/v3/api/user/current_user")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -480,8 +481,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "content-length": "0",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -498,7 +499,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/document/get")
-            .post("https://api2.mubu.com/v3/api/document/get")
+            .post("https://api2.${host}/v3/api/document/get")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -508,8 +509,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "content-type": "application/json;charset=UTF-8",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -524,7 +525,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/user/current_level")
-            .post("https://api2.mubu.com/v3/api/user/current_level")
+            .post("https://api2.${host}/v3/api/user/current_level")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -534,8 +535,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "content-type": "application/json;charset=UTF-8",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -550,7 +551,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/user/get_user_params")
-            .post("https://api2.mubu.com/v3/api/user/get_user_params")
+            .post("https://api2.${host}/v3/api/user/get_user_params")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -559,8 +560,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "content-length": "0",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -575,7 +576,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/user/get_invite_count")
-            .get("https://api2.mubu.com/v3/api/user/get_invite_count")
+            .get("https://api2.${host}/v3/api/user/get_invite_count")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -583,8 +584,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-language": "en-US,en;q=0.9",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -598,7 +599,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/colla/register")
-            .get("https://api2.mubu.com/v3/api/colla/register")
+            .get("https://api2.${host}/v3/api/colla/register")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -606,8 +607,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-language": "en-US,en;q=0.9",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -621,7 +622,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/colla/members")
-            .get("https://api2.mubu.com/v3/api/colla/members")
+            .get("https://api2.${host}/v3/api/colla/members")
             .with_params(**{"documentId": "${docId}", "memberId": "${memberId}"})
             .with_headers(
                 **{
@@ -630,8 +631,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-language": "en-US,en;q=0.9",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "request-id": "members:${memberId}:1599890950987",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
@@ -646,7 +647,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -657,8 +658,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
                     "member-id": "${memberId}",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "request-id": "MESSAGE:${userId}:${memberId}:3",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
@@ -709,7 +710,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -720,8 +721,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
                     "member-id": "${memberId}",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "request-id": "MESSAGE:${userId}:${memberId}:5",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
@@ -770,7 +771,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -781,8 +782,8 @@ class TestCaseCreatedoc(HttpRunner):
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
                     "member-id": "${memberId}",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/doc${docId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
                     "request-id": "MESSAGE:${userId}:${memberId}:7",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
@@ -826,7 +827,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         # Step(
         #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.mubu.com/v3/api/colla/message")
+        #     .post("https://api2.${host}/v3/api/colla/message")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/plain, */*",
@@ -837,8 +838,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
         #             "member-id": "${memberId}",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "request-id": "MESSAGE:${userId}:${memberId}:9",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
@@ -893,7 +894,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.mubu.com/v3/api/colla/message")
+        #     .post("https://api2.${host}/v3/api/colla/message")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/plain, */*",
@@ -904,8 +905,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
         #             "member-id": "${memberId}",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "request-id": "MESSAGE:${userId}:${memberId}:11",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
@@ -962,7 +963,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.mubu.com/v3/api/colla/message")
+        #     .post("https://api2.${host}/v3/api/colla/message")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/plain, */*",
@@ -973,8 +974,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
         #             "member-id": "${memberId}",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "request-id": "MESSAGE:${userId}:${memberId}:12",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
@@ -1031,7 +1032,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.mubu.com/v3/api/colla/message")
+        #     .post("https://api2.${host}/v3/api/colla/message")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/plain, */*",
@@ -1042,8 +1043,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
         #             "member-id": "${memberId}",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "request-id": "MESSAGE:${userId}:${memberId}:14",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
@@ -1098,7 +1099,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.mubu.com/v3/api/colla/message")
+        #     .post("https://api2.${host}/v3/api/colla/message")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/plain, */*",
@@ -1109,8 +1110,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
         #             "member-id": "${memberId}",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "request-id": "MESSAGE:${userId}:${memberId}:16",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
@@ -1167,7 +1168,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/v3/api/document/get_recent_list")
-        #     .post("https://api2.mubu.com/v3/api/document/get_recent_list")
+        #     .post("https://api2.${host}/v3/api/document/get_recent_list")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/plain, */*",
@@ -1177,8 +1178,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "content-type": "application/json;charset=UTF-8",
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1193,7 +1194,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/v3/api/document/get_recent_list")
-        #     .post("https://api2.mubu.com/v3/api/document/get_recent_list")
+        #     .post("https://api2.${host}/v3/api/document/get_recent_list")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/plain, */*",
@@ -1203,8 +1204,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "content-type": "application/json;charset=UTF-8",
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1219,7 +1220,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.mubu.com/v3/api/colla/message")
+        #     .post("https://api2.${host}/v3/api/colla/message")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/plain, */*",
@@ -1230,8 +1231,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
         #             "member-id": "${memberId}",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "request-id": "MESSAGE:${userId}:${memberId}:21",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
@@ -1268,7 +1269,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
         #             "accept-encoding": "gzip, deflate, br",
         #             "accept-language": "en-US,en;q=0.9",
-        #             "referer": "https://mubu.com/doc${docId}",
+        #             "referer": "https://${host}/doc${docId}",
         #             "sec-fetch-dest": "document",
         #             "sec-fetch-mode": "navigate",
         #             "sec-fetch-site": "same-origin",
@@ -1313,8 +1314,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "accept-encoding": "gzip, deflate, br",
         #             "accept-language": "en-US,en;q=0.9",
         #             "content-length": "0",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/list",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/list",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-origin",
@@ -1362,8 +1363,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "accept-language": "en-US,en;q=0.9",
         #             "content-length": "38",
         #             "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/list",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/list",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-origin",
@@ -1410,8 +1411,8 @@ class TestCaseCreatedoc(HttpRunner):
         #             "accept-encoding": "gzip, deflate, br",
         #             "accept-language": "en-US,en;q=0.9",
         #             "content-length": "0",
-        #             "origin": "https://mubu.com",
-        #             "referer": "https://mubu.com/list",
+        #             "origin": "https://${host}",
+        #             "referer": "https://${host}/list",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-origin",
