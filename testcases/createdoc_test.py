@@ -13,7 +13,7 @@ class TestCaseCreatedoc(HttpRunner):
         .variables(**{
             "phone": "18613143458",
             "password": "msFrwx$!kz3RTRm@Q*pV",
-            "memberId": "1979064713794584"
+            "memberId": "${gen_member_id()}"
         })
     )
 
