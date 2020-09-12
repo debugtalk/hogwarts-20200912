@@ -441,6 +441,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-mode": "navigate",
                     "sec-fetch-site": "same-origin",
                     "sec-fetch-user": "?1",
+                    "docIdLen": "${get_doc_id_len($docId)}",
                     "upgrade-insecure-requests": "1",
                     "user-agent": "HttpRunner/${get_httprunner_version()}",
                 }

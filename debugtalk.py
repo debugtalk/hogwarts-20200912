@@ -12,6 +12,11 @@ def sum_two(m, n):
     return str(m + n)
 
 
+def get_doc_id_len(docId):
+    print("docId===: ", docId)
+    return str(len(docId))
+
+
 def sleep(n_secs):
     time.sleep(n_secs)
 
