@@ -10,6 +10,7 @@ class TestCaseCreatedoc(HttpRunner):
     config = (
         Config("testcase description")
         .verify(False)
+        .base_url("https://mubu.com")
         .variables(**{
             "phone": "18613143458",
             "password": "msFrwx$!kz3RTRm@Q*pV",
@@ -20,7 +21,7 @@ class TestCaseCreatedoc(HttpRunner):
     teststeps = [
         Step(
             RunRequest("/")
-            .get("https://mubu.com/")
+            .get("/")
             .with_headers(
                 **{
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -61,7 +62,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/login")
-            .get("https://mubu.com/login")
+            .get("/login")
             .with_headers(
                 **{
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -102,7 +103,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/login/password")
-            .get("https://mubu.com/login/password")
+            .get("/login/password")
             .with_headers(
                 **{
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -143,7 +144,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/api/login/submit")
-            .post("https://mubu.com/api/login/submit")
+            .post("/api/login/submit")
             .with_headers(
                 **{
                     "accept": "application/json, text/javascript, */*; q=0.01",
@@ -191,7 +192,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/list")
-            .get("https://mubu.com/list")
+            .get("/list")
             .with_headers(
                 **{
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -235,7 +236,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/api/list/tip_new_update")
-            .post("https://mubu.com/api/list/tip_new_update")
+            .post("/api/list/tip_new_update")
             .with_headers(
                 **{
                     "accept": "application/json, text/javascript, */*; q=0.01",
@@ -282,7 +283,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/api/list/get")
-            .post("https://mubu.com/api/list/get")
+            .post("/api/list/get")
             .with_headers(
                 **{
                     "accept": "application/json, text/javascript, */*; q=0.01",
@@ -330,7 +331,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/api/message/get_message_unread")
-            .post("https://mubu.com/api/message/get_message_unread")
+            .post("/api/message/get_message_unread")
             .with_headers(
                 **{
                     "accept": "application/json, text/javascript, */*; q=0.01",
@@ -377,7 +378,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/api/list/create_doc")
-            .post("https://mubu.com/api/list/create_doc")
+            .post("/api/list/create_doc")
             .with_headers(
                 **{
                     "accept": "application/json, text/javascript, */*; q=0.01",
@@ -427,7 +428,7 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/doc${docId}")
-            .get("https://mubu.com/doc${docId}")
+            .get("/doc${docId}")
             .with_headers(
                 **{
                     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -1261,7 +1262,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/list")
-        #     .get("https://mubu.com/list")
+        #     .get("/list")
         #     .with_headers(
         #         **{
         #             "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -1305,7 +1306,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/api/list/tip_new_update")
-        #     .post("https://mubu.com/api/list/tip_new_update")
+        #     .post("/api/list/tip_new_update")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/javascript, */*; q=0.01",
@@ -1353,7 +1354,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/api/list/get")
-        #     .post("https://mubu.com/api/list/get")
+        #     .post("/api/list/get")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/javascript, */*; q=0.01",
@@ -1402,7 +1403,7 @@ class TestCaseCreatedoc(HttpRunner):
         # ),
         # Step(
         #     RunRequest("/api/message/get_message_unread")
-        #     .post("https://mubu.com/api/message/get_message_unread")
+        #     .post("/api/message/get_message_unread")
         #     .with_headers(
         #         **{
         #             "accept": "application/json, text/javascript, */*; q=0.01",
