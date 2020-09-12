@@ -26,7 +26,7 @@ class TestCaseCreatedoc(HttpRunner):
 
     teststeps = [
         Step(
-            RunTestCase("login").call(Login).export("unreadCount")
+            RunTestCase("login").call(Login).export("unreadCount", "firstFolderId")
         ),
         Step(
             RunRequest("/api/list/create_doc")
@@ -46,6 +46,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-requested-with": "XMLHttpRequest",
                     "unreadCount": "count-$unreadCount",
+                    "foldersList": "$firstFolderId"
                 }
             )
             .with_cookies(

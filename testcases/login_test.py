@@ -14,7 +14,7 @@ class TestCaseLogin(HttpRunner):
                 "host": "mubu.com",
             }
         )
-        .export("unreadCount")
+        .export("unreadCount", "firstFolderId")
     )
 
     teststeps = [
@@ -327,6 +327,7 @@ class TestCaseLogin(HttpRunner):
             .teardown_hook("${get_folders_num($response)}", "foldersNum")
             .extract()
             .with_jmespath("body.data.folders", "foldersList")
+            .with_jmespath("body.data.folders[0].id", "firstFolderId")
             .validate()
             .assert_equal("status_code", 200)
             .assert_equal("body.code", 0)
