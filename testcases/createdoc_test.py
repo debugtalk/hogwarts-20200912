@@ -18,6 +18,7 @@ class TestCaseCreatedoc(HttpRunner):
             "host": "mubu.com",
             "title": "${gen_random_title()}",
         })
+        .export("docId", "title")
     )
 
     teststeps = [
