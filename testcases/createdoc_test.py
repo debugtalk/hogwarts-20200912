@@ -34,7 +34,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-site": "same-origin",
                     "sec-fetch-user": "?1",
                     "upgrade-insecure-requests": "1",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                 }
             )
             .with_cookies(
@@ -75,7 +75,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-site": "same-origin",
                     "sec-fetch-user": "?1",
                     "upgrade-insecure-requests": "1",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                 }
             )
             .with_cookies(
@@ -116,7 +116,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-site": "same-origin",
                     "sec-fetch-user": "?1",
                     "upgrade-insecure-requests": "1",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                 }
             )
             .with_cookies(
@@ -158,7 +158,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-requested-with": "XMLHttpRequest",
                 }
             )
@@ -206,7 +206,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-site": "same-origin",
                     "sec-fetch-user": "?1",
                     "upgrade-insecure-requests": "1",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                 }
             )
             .with_cookies(
@@ -249,7 +249,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-requested-with": "XMLHttpRequest",
                 }
             )
@@ -297,7 +297,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-requested-with": "XMLHttpRequest",
                 }
             )
@@ -344,7 +344,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-requested-with": "XMLHttpRequest",
                 }
             )
@@ -392,7 +392,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-requested-with": "XMLHttpRequest",
                 }
             )
@@ -441,7 +441,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-site": "same-origin",
                     "sec-fetch-user": "?1",
                     "upgrade-insecure-requests": "1",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                 }
             )
             .with_cookies(
@@ -486,7 +486,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "0029d618-58f7-420c-a1aa-1f3cbb613d2e",
                 }
             )
@@ -514,7 +514,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "1d1f3a49-65b0-4b30-bed0-37c190c27de2",
                 }
             )
@@ -540,7 +540,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "0be07a08-67ff-4947-a7be-bddd8d20fb9e",
                 }
             )
@@ -565,7 +565,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "d9654e30-ebfb-44ef-bec1-bbaaaec8b54d",
                 }
             )
@@ -589,7 +589,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "5734fc93-ee69-4fd9-88c9-420953d4eacb",
                 }
             )
@@ -612,7 +612,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "07b06672-7fa3-4da4-8722-59f0b014392c",
                 }
             )
@@ -637,7 +637,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "8f06732f-2ae7-4ed7-bb5c-79e871c69fb8",
                 }
             )
@@ -664,7 +664,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "263097f3-89d3-418b-b131-c18f96f86dad",
                 }
             )
@@ -727,7 +727,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "6c29a6f3-0da0-4698-866e-977b1576c9df",
                 }
             )
@@ -788,7 +788,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
-                    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-request-id": "3829c9d3-c9f6-481f-8e89-0b2f0226e71e",
                 }
             )
@@ -844,7 +844,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-request-id": "450b2a5d-3ad1-4b02-a4ae-5515cfbc2c2d",
         #         }
         #     )
@@ -911,7 +911,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-request-id": "db130e1e-3a13-44af-9aae-c3b8dcd463b8",
         #         }
         #     )
@@ -980,7 +980,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-request-id": "d1c85434-f03b-44b8-8a25-02814426e89d",
         #         }
         #     )
@@ -1049,7 +1049,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-request-id": "4c0c2387-3f7c-4e9a-a0bf-46ad6686cea8",
         #         }
         #     )
@@ -1116,7 +1116,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-request-id": "4f054321-2eff-4d32-975a-607683e35bf1",
         #         }
         #     )
@@ -1183,7 +1183,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-request-id": "eaf20656-5396-4fc5-b62a-f00399c3b95f",
         #         }
         #     )
@@ -1209,7 +1209,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-request-id": "eaf20656-5396-4fc5-b62a-f00399c3b95f",
         #         }
         #     )
@@ -1237,7 +1237,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-request-id": "bf16ee6f-e757-4a6d-ab92-6de2b260d60e",
         #         }
         #     )
@@ -1275,7 +1275,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-site": "same-origin",
         #             "sec-fetch-user": "?1",
         #             "upgrade-insecure-requests": "1",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #         }
         #     )
         #     .with_cookies(
@@ -1319,7 +1319,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-origin",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-requested-with": "XMLHttpRequest",
         #         }
         #     )
@@ -1368,7 +1368,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-origin",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-requested-with": "XMLHttpRequest",
         #         }
         #     )
@@ -1416,7 +1416,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-origin",
-        #             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36",
+        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
         #             "x-requested-with": "XMLHttpRequest",
         #         }
         #     )
