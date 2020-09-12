@@ -324,10 +324,13 @@ class TestCaseLogin(HttpRunner):
                 }
             )
             .with_data({"folderId": "0", "keywords": "", "sort": "name", "source": ""})
+            .extract()
+            .with_jmespath("body.data.folders", "foldersList")
             .validate()
             .assert_equal("status_code", 200)
             .assert_equal("body.code", 0)
             .assert_equal("body.msg", None)
+            .assert_length_greater_than("$foldersList", 5)
         ),
         Step(
             RunRequest("/api/message/get_message_unread")
