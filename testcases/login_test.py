@@ -14,6 +14,7 @@ class TestCaseLogin(HttpRunner):
                 "host": "mubu.com",
             }
         )
+        .export("unreadCount")
     )
 
     teststeps = [
@@ -370,6 +371,8 @@ class TestCaseLogin(HttpRunner):
                 }
             )
             .with_data("")
+            .extract()
+            .with_jmespath("body.data.unreadCount", "unreadCount")
             .validate()
             .assert_equal("status_code", 200)
             .assert_equal("body.code", 0)

@@ -25,7 +25,9 @@ class TestCaseCreatedoc(HttpRunner):
     )
 
     teststeps = [
-        Step(RunTestCase("login").call(Login)),
+        Step(
+            RunTestCase("login").call(Login).export("unreadCount")
+        ),
         Step(
             RunRequest("/api/list/create_doc")
             .post("/api/list/create_doc")
@@ -43,6 +45,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-site": "same-origin",
                     "user-agent": "HttpRunner/${get_httprunner_version()}",
                     "x-requested-with": "XMLHttpRequest",
+                    "unreadCount": "count-$unreadCount",
                 }
             )
             .with_cookies(
