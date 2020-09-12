@@ -9,7 +9,7 @@ def get_httprunner_version():
 
 
 def sum_two(m, n):
-    return m + n
+    return str(m + n)
 
 
 def sleep(n_secs):

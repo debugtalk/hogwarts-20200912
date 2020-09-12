@@ -34,6 +34,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "sec-fetch-site": "same-origin",
                     "sec-fetch-user": "?1",
                     "upgrade-insecure-requests": "1",
+                    "sum_two": "${sum_two(1, 8)}",
                     "user-agent": "HttpRunner/${get_httprunner_version()}",
                 }
             )
