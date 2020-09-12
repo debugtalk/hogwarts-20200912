@@ -10,7 +10,11 @@ class TestCaseCreatedoc(HttpRunner):
     config = (
         Config("testcase description")
         .verify(False)
-        .variables(**{"phone": "18613143458", "password": "msFrwx$!kz3RTRm@Q*pV"})
+        .variables(**{
+            "phone": "18613143458",
+            "password": "msFrwx$!kz3RTRm@Q*pV",
+            "memberId": "1979064713794584"
+        })
     )
 
     teststeps = [
@@ -615,7 +619,7 @@ class TestCaseCreatedoc(HttpRunner):
         Step(
             RunRequest("/v3/api/colla/members")
             .get("https://api2.mubu.com/v3/api/colla/members")
-            .with_params(**{"documentId": "${docId}", "memberId": "1979064713794584"})
+            .with_params(**{"documentId": "${docId}", "memberId": "${memberId}"})
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
@@ -625,7 +629,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
                     "origin": "https://mubu.com",
                     "referer": "https://mubu.com/doc${docId}",
-                    "request-id": "members:1979064713794584:1599890950987",
+                    "request-id": "members:${memberId}:1599890950987",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -649,10 +653,10 @@ class TestCaseCreatedoc(HttpRunner):
                     "content-type": "application/json;charset=UTF-8",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "member-id": "1979064713794584",
+                    "member-id": "${memberId}",
                     "origin": "https://mubu.com",
                     "referer": "https://mubu.com/doc${docId}",
-                    "request-id": "MESSAGE:1449164:1979064713794584:3",
+                    "request-id": "MESSAGE:1449164:${memberId}:3",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -692,7 +696,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "engineType": "MUBU",
                     "messageType": "BROADCAST",
                     "reqId": 3,
-                    "requestId": "MESSAGE:1449164:1979064713794584:3",
+                    "requestId": "MESSAGE:1449164:${memberId}:3",
                     "token": "${docId}",
                 }
             )
@@ -712,10 +716,10 @@ class TestCaseCreatedoc(HttpRunner):
                     "content-type": "application/json;charset=UTF-8",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "member-id": "1979064713794584",
+                    "member-id": "${memberId}",
                     "origin": "https://mubu.com",
                     "referer": "https://mubu.com/doc${docId}",
-                    "request-id": "MESSAGE:1449164:1979064713794584:5",
+                    "request-id": "MESSAGE:1449164:${memberId}:5",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -753,7 +757,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "engineType": "MUBU",
                     "messageType": "BROADCAST",
                     "reqId": 5,
-                    "requestId": "MESSAGE:1449164:1979064713794584:5",
+                    "requestId": "MESSAGE:1449164:${memberId}:5",
                     "token": "${docId}",
                 }
             )
@@ -773,10 +777,10 @@ class TestCaseCreatedoc(HttpRunner):
                     "content-type": "application/json;charset=UTF-8",
                     "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-                    "member-id": "1979064713794584",
+                    "member-id": "${memberId}",
                     "origin": "https://mubu.com",
                     "referer": "https://mubu.com/doc${docId}",
-                    "request-id": "MESSAGE:1449164:1979064713794584:7",
+                    "request-id": "MESSAGE:1449164:${memberId}:7",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -809,7 +813,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "engineType": "MUBU",
                     "messageType": "BROADCAST",
                     "reqId": 7,
-                    "requestId": "MESSAGE:1449164:1979064713794584:7",
+                    "requestId": "MESSAGE:1449164:${memberId}:7",
                     "token": "${docId}",
                 }
             )
@@ -829,10 +833,10 @@ class TestCaseCreatedoc(HttpRunner):
         #             "content-type": "application/json;charset=UTF-8",
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "1979064713794584",
+        #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:1979064713794584:9",
+        #             "request-id": "MESSAGE:1449164:${memberId}:9",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -876,7 +880,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 9,
-        #             "requestId": "MESSAGE:1449164:1979064713794584:9",
+        #             "requestId": "MESSAGE:1449164:${memberId}:9",
         #             "token": "${docId}",
         #         }
         #     )
@@ -896,10 +900,10 @@ class TestCaseCreatedoc(HttpRunner):
         #             "content-type": "application/json;charset=UTF-8",
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "1979064713794584",
+        #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:1979064713794584:11",
+        #             "request-id": "MESSAGE:1449164:${memberId}:11",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -945,7 +949,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 11,
-        #             "requestId": "MESSAGE:1449164:1979064713794584:11",
+        #             "requestId": "MESSAGE:1449164:${memberId}:11",
         #             "token": "${docId}",
         #         }
         #     )
@@ -965,10 +969,10 @@ class TestCaseCreatedoc(HttpRunner):
         #             "content-type": "application/json;charset=UTF-8",
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "1979064713794584",
+        #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:1979064713794584:12",
+        #             "request-id": "MESSAGE:1449164:${memberId}:12",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1014,7 +1018,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 12,
-        #             "requestId": "MESSAGE:1449164:1979064713794584:12",
+        #             "requestId": "MESSAGE:1449164:${memberId}:12",
         #             "token": "${docId}",
         #         }
         #     )
@@ -1034,10 +1038,10 @@ class TestCaseCreatedoc(HttpRunner):
         #             "content-type": "application/json;charset=UTF-8",
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "1979064713794584",
+        #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:1979064713794584:14",
+        #             "request-id": "MESSAGE:1449164:${memberId}:14",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1081,7 +1085,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 14,
-        #             "requestId": "MESSAGE:1449164:1979064713794584:14",
+        #             "requestId": "MESSAGE:1449164:${memberId}:14",
         #             "token": "${docId}",
         #         }
         #     )
@@ -1101,10 +1105,10 @@ class TestCaseCreatedoc(HttpRunner):
         #             "content-type": "application/json;charset=UTF-8",
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "1979064713794584",
+        #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:1979064713794584:16",
+        #             "request-id": "MESSAGE:1449164:${memberId}:16",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1150,7 +1154,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 16,
-        #             "requestId": "MESSAGE:1449164:1979064713794584:16",
+        #             "requestId": "MESSAGE:1449164:${memberId}:16",
         #             "token": "${docId}",
         #         }
         #     )
@@ -1222,10 +1226,10 @@ class TestCaseCreatedoc(HttpRunner):
         #             "content-type": "application/json;charset=UTF-8",
         #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
         #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "1979064713794584",
+        #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:1979064713794584:21",
+        #             "request-id": "MESSAGE:1449164:${memberId}:21",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1245,7 +1249,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "UNWATCH",
         #             "reqId": 21,
-        #             "requestId": "MESSAGE:1449164:1979064713794584:21",
+        #             "requestId": "MESSAGE:1449164:${memberId}:21",
         #             "token": "${docId}",
         #         }
         #     )
