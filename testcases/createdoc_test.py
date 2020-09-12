@@ -7,7 +7,11 @@ from httprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
 
 class TestCaseCreatedoc(HttpRunner):
 
-    config = Config("testcase description").verify(False)
+    config = (
+        Config("testcase description")
+        .verify(False)
+        .variables(**{"phone": "18613143458", "password": "msFrwx$!kz3RTRm@Q*pV"})
+    )
 
     teststeps = [
         Step(
@@ -135,9 +139,6 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/api/login/submit")
-            .with_variables(
-                **{"phone": "18613143458", "password": "msFrwx$!kz3RTRm@Q*pV"}
-            )
             .post("https://mubu.com/api/login/submit")
             .with_headers(
                 **{
@@ -193,6 +194,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "accept-encoding": "gzip, deflate, br",
                     "accept-language": "en-US,en;q=0.9",
                     "referer": "https://mubu.com/login/password",
+                    "phone": "$phone",
                     "sec-fetch-dest": "document",
                     "sec-fetch-mode": "navigate",
                     "sec-fetch-site": "same-origin",
