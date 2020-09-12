@@ -15,7 +15,7 @@ class TestCaseCreatedoc(HttpRunner):
         Parameters(
             {
                 "title": ["demo-1111", "demo-2222"],
-                # "username-password": "${parameterize(request_methods/account.csv)}",
+                "phone-password": "${parameterize(data/accounts.csv)}",
                 "version": "${get_app_version()}",
             }
         ),
