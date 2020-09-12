@@ -33,3 +33,7 @@ def gen_member_id():
 def get_folders_num(response: ResponseObject):
     folders = response.resp_obj.json()["data"]["folders"]
     return len(folders)
+
+
+def get_app_version():
+    return ["1.0", "1.2"]
