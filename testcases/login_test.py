@@ -324,6 +324,7 @@ class TestCaseLogin(HttpRunner):
                 }
             )
             .with_data({"folderId": "0", "keywords": "", "sort": "name", "source": ""})
+            .teardown_hook("${get_folders_num($response)}", "foldersNum")
             .extract()
             .with_jmespath("body.data.folders", "foldersList")
             .validate()
@@ -331,6 +332,7 @@ class TestCaseLogin(HttpRunner):
             .assert_equal("body.code", 0)
             .assert_equal("body.msg", None)
             .assert_length_greater_than("$foldersList", 5)
+            .assert_greater_than("$foldersNum", 5)
         ),
         Step(
             RunRequest("/api/message/get_message_unread")

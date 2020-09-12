@@ -1,5 +1,6 @@
 import time
 import random
+from httprunner.response import ResponseObject
 
 from httprunner import __version__
 
@@ -27,3 +28,8 @@ def sleep(n_secs):
 
 def gen_member_id():
     return f"1979064713794{random.randint(100, 999)}"
+
+
+def get_folders_num(response: ResponseObject):
+    folders = response.resp_obj.json()["data"]["folders"]
+    return len(folders)
