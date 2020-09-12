@@ -135,6 +135,9 @@ class TestCaseCreatedoc(HttpRunner):
         ),
         Step(
             RunRequest("/api/login/submit")
+            .with_variables(
+                **{"phone": "18613143458", "password": "msFrwx$!kz3RTRm@Q*pV"}
+            )
             .post("https://mubu.com/api/login/submit")
             .with_headers(
                 **{
@@ -174,11 +177,7 @@ class TestCaseCreatedoc(HttpRunner):
                 }
             )
             .with_data(
-                {
-                    "password": "msFrwx$!kz3RTRm@Q*pV",
-                    "phone": "18613143458",
-                    "remember": "true",
-                }
+                {"password": "$password", "phone": "$phone", "remember": "true",}
             )
             .validate()
             .assert_equal("status_code", 200)
@@ -614,9 +613,7 @@ class TestCaseCreatedoc(HttpRunner):
         Step(
             RunRequest("/v3/api/colla/members")
             .get("https://api2.mubu.com/v3/api/colla/members")
-            .with_params(
-                **{"documentId": "${docId}", "memberId": "1979064713794584"}
-            )
+            .with_params(**{"documentId": "${docId}", "memberId": "1979064713794584"})
             .with_headers(
                 **{
                     "accept": "application/json, text/plain, */*",
