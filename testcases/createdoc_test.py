@@ -489,6 +489,8 @@ class TestCaseCreatedoc(HttpRunner):
                 }
             )
             .with_data("")
+            .extract()
+            .with_jmespath("body.data.id", "userId")
             .validate()
             .assert_equal("status_code", 200)
             .assert_equal("body.code", 0)
@@ -656,7 +658,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "member-id": "${memberId}",
                     "origin": "https://mubu.com",
                     "referer": "https://mubu.com/doc${docId}",
-                    "request-id": "MESSAGE:1449164:${memberId}:3",
+                    "request-id": "MESSAGE:${userId}:${memberId}:3",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -696,7 +698,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "engineType": "MUBU",
                     "messageType": "BROADCAST",
                     "reqId": 3,
-                    "requestId": "MESSAGE:1449164:${memberId}:3",
+                    "requestId": "MESSAGE:${userId}:${memberId}:3",
                     "token": "${docId}",
                 }
             )
@@ -719,7 +721,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "member-id": "${memberId}",
                     "origin": "https://mubu.com",
                     "referer": "https://mubu.com/doc${docId}",
-                    "request-id": "MESSAGE:1449164:${memberId}:5",
+                    "request-id": "MESSAGE:${userId}:${memberId}:5",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -757,7 +759,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "engineType": "MUBU",
                     "messageType": "BROADCAST",
                     "reqId": 5,
-                    "requestId": "MESSAGE:1449164:${memberId}:5",
+                    "requestId": "MESSAGE:${userId}:${memberId}:5",
                     "token": "${docId}",
                 }
             )
@@ -780,7 +782,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "member-id": "${memberId}",
                     "origin": "https://mubu.com",
                     "referer": "https://mubu.com/doc${docId}",
-                    "request-id": "MESSAGE:1449164:${memberId}:7",
+                    "request-id": "MESSAGE:${userId}:${memberId}:7",
                     "sec-fetch-dest": "empty",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-site",
@@ -813,7 +815,7 @@ class TestCaseCreatedoc(HttpRunner):
                     "engineType": "MUBU",
                     "messageType": "BROADCAST",
                     "reqId": 7,
-                    "requestId": "MESSAGE:1449164:${memberId}:7",
+                    "requestId": "MESSAGE:${userId}:${memberId}:7",
                     "token": "${docId}",
                 }
             )
@@ -836,7 +838,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:${memberId}:9",
+        #             "request-id": "MESSAGE:${userId}:${memberId}:9",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -880,7 +882,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 9,
-        #             "requestId": "MESSAGE:1449164:${memberId}:9",
+        #             "requestId": "MESSAGE:${userId}:${memberId}:9",
         #             "token": "${docId}",
         #         }
         #     )
@@ -903,7 +905,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:${memberId}:11",
+        #             "request-id": "MESSAGE:${userId}:${memberId}:11",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -949,7 +951,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 11,
-        #             "requestId": "MESSAGE:1449164:${memberId}:11",
+        #             "requestId": "MESSAGE:${userId}:${memberId}:11",
         #             "token": "${docId}",
         #         }
         #     )
@@ -972,7 +974,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:${memberId}:12",
+        #             "request-id": "MESSAGE:${userId}:${memberId}:12",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1018,7 +1020,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 12,
-        #             "requestId": "MESSAGE:1449164:${memberId}:12",
+        #             "requestId": "MESSAGE:${userId}:${memberId}:12",
         #             "token": "${docId}",
         #         }
         #     )
@@ -1041,7 +1043,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:${memberId}:14",
+        #             "request-id": "MESSAGE:${userId}:${memberId}:14",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1085,7 +1087,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 14,
-        #             "requestId": "MESSAGE:1449164:${memberId}:14",
+        #             "requestId": "MESSAGE:${userId}:${memberId}:14",
         #             "token": "${docId}",
         #         }
         #     )
@@ -1108,7 +1110,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:${memberId}:16",
+        #             "request-id": "MESSAGE:${userId}:${memberId}:16",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1154,7 +1156,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "BROADCAST",
         #             "reqId": 16,
-        #             "requestId": "MESSAGE:1449164:${memberId}:16",
+        #             "requestId": "MESSAGE:${userId}:${memberId}:16",
         #             "token": "${docId}",
         #         }
         #     )
@@ -1229,7 +1231,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "member-id": "${memberId}",
         #             "origin": "https://mubu.com",
         #             "referer": "https://mubu.com/doc${docId}",
-        #             "request-id": "MESSAGE:1449164:${memberId}:21",
+        #             "request-id": "MESSAGE:${userId}:${memberId}:21",
         #             "sec-fetch-dest": "empty",
         #             "sec-fetch-mode": "cors",
         #             "sec-fetch-site": "same-site",
@@ -1249,7 +1251,7 @@ class TestCaseCreatedoc(HttpRunner):
         #             "engineType": "MUBU",
         #             "messageType": "UNWATCH",
         #             "reqId": 21,
-        #             "requestId": "MESSAGE:1449164:${memberId}:21",
+        #             "requestId": "MESSAGE:${userId}:${memberId}:21",
         #             "token": "${docId}",
         #         }
         #     )
