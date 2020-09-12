@@ -16,6 +16,7 @@ class TestCaseCreatedoc(HttpRunner):
             "password": "msFrwx$!kz3RTRm@Q*pV",
             "memberId": "${gen_member_id()}",
             "host": "mubu.com",
+            "title": "${gen_random_title()}",
         })
     )
 
@@ -808,7 +809,7 @@ class TestCaseCreatedoc(HttpRunner):
                                 {
                                     "name": "nameChanged",
                                     "original": "demo12",
-                                    "title": "demo123",
+                                    "title": "$title",
                                 }
                             ],
                             "documentId": "${docId}",
@@ -827,631 +828,631 @@ class TestCaseCreatedoc(HttpRunner):
             .assert_equal("status_code", 200)
             .assert_equal("body.code", 0)
         ),
-        # Step(
-        #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.${host}/v3/api/colla/message")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/plain, */*",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "458",
-        #             "content-type": "application/json;charset=UTF-8",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "${memberId}",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "request-id": "MESSAGE:${userId}:${memberId}:9",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-site",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-request-id": "450b2a5d-3ad1-4b02-a4ae-5515cfbc2c2d",
-        #         }
-        #     )
-        #     .with_json(
-        #         {
-        #             "context": {
-        #                 "appVersion": "1.0.0.391",
-        #                 "os": "macOS",
-        #                 "osVersion": "10.15.6",
-        #                 "platform": "web",
-        #             },
-        #             "data": {
-        #                 "message": {
-        #                     "content": [
-        #                         {
-        #                             "created": [
-        #                                 {
-        #                                     "index": 0,
-        #                                     "node": {
-        #                                         "children": [],
-        #                                         "id": "THHy4n1NhO",
-        #                                         "modified": 1599890954289,
-        #                                         "text": "",
-        #                                     },
-        #                                     "parentId": None,
-        #                                     "path": ["nodes", 0],
-        #                                 }
-        #                             ],
-        #                             "name": "create",
-        #                         }
-        #                     ],
-        #                     "documentId": "${docId}",
-        #                     "type": "CHANGE",
-        #                     "version": 3,
-        #                 }
-        #             },
-        #             "engineType": "MUBU",
-        #             "messageType": "BROADCAST",
-        #             "reqId": 9,
-        #             "requestId": "MESSAGE:${userId}:${memberId}:9",
-        #             "token": "${docId}",
-        #         }
-        #     )
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        # ),
-        # Step(
-        #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.${host}/v3/api/colla/message")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/plain, */*",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "503",
-        #             "content-type": "application/json;charset=UTF-8",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "${memberId}",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "request-id": "MESSAGE:${userId}:${memberId}:11",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-site",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-request-id": "db130e1e-3a13-44af-9aae-c3b8dcd463b8",
-        #         }
-        #     )
-        #     .with_json(
-        #         {
-        #             "context": {
-        #                 "appVersion": "1.0.0.391",
-        #                 "os": "macOS",
-        #                 "osVersion": "10.15.6",
-        #                 "platform": "web",
-        #             },
-        #             "data": {
-        #                 "message": {
-        #                     "content": [
-        #                         {
-        #                             "name": "update",
-        #                             "updated": [
-        #                                 {
-        #                                     "original": {
-        #                                         "id": "THHy4n1NhO",
-        #                                         "modified": 1599890954289,
-        #                                         "text": "",
-        #                                     },
-        #                                     "path": ["nodes", 0],
-        #                                     "updated": {
-        #                                         "id": "THHy4n1NhO",
-        #                                         "modified": 1599890955265,
-        #                                         "text": "<span>1</span>",
-        #                                     },
-        #                                 }
-        #                             ],
-        #                         }
-        #                     ],
-        #                     "documentId": "${docId}",
-        #                     "type": "CHANGE",
-        #                     "version": 4,
-        #                 }
-        #             },
-        #             "engineType": "MUBU",
-        #             "messageType": "BROADCAST",
-        #             "reqId": 11,
-        #             "requestId": "MESSAGE:${userId}:${memberId}:11",
-        #             "token": "${docId}",
-        #         }
-        #     )
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        # ),
-        # Step(
-        #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.${host}/v3/api/colla/message")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/plain, */*",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "519",
-        #             "content-type": "application/json;charset=UTF-8",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "${memberId}",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "request-id": "MESSAGE:${userId}:${memberId}:12",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-site",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-request-id": "d1c85434-f03b-44b8-8a25-02814426e89d",
-        #         }
-        #     )
-        #     .with_json(
-        #         {
-        #             "context": {
-        #                 "appVersion": "1.0.0.391",
-        #                 "os": "macOS",
-        #                 "osVersion": "10.15.6",
-        #                 "platform": "web",
-        #             },
-        #             "data": {
-        #                 "message": {
-        #                     "content": [
-        #                         {
-        #                             "name": "update",
-        #                             "updated": [
-        #                                 {
-        #                                     "original": {
-        #                                         "id": "THHy4n1NhO",
-        #                                         "modified": 1599890955265,
-        #                                         "text": "<span>1</span>",
-        #                                     },
-        #                                     "path": ["nodes", 0],
-        #                                     "updated": {
-        #                                         "id": "THHy4n1NhO",
-        #                                         "modified": 1599890955907,
-        #                                         "text": "<span>111</span>",
-        #                                     },
-        #                                 }
-        #                             ],
-        #                         }
-        #                     ],
-        #                     "documentId": "${docId}",
-        #                     "type": "CHANGE",
-        #                     "version": 5,
-        #                 }
-        #             },
-        #             "engineType": "MUBU",
-        #             "messageType": "BROADCAST",
-        #             "reqId": 12,
-        #             "requestId": "MESSAGE:${userId}:${memberId}:12",
-        #             "token": "${docId}",
-        #         }
-        #     )
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        # ),
-        # Step(
-        #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.${host}/v3/api/colla/message")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/plain, */*",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "460",
-        #             "content-type": "application/json;charset=UTF-8",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "${memberId}",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "request-id": "MESSAGE:${userId}:${memberId}:14",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-site",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-request-id": "4c0c2387-3f7c-4e9a-a0bf-46ad6686cea8",
-        #         }
-        #     )
-        #     .with_json(
-        #         {
-        #             "context": {
-        #                 "appVersion": "1.0.0.391",
-        #                 "os": "macOS",
-        #                 "osVersion": "10.15.6",
-        #                 "platform": "web",
-        #             },
-        #             "data": {
-        #                 "message": {
-        #                     "content": [
-        #                         {
-        #                             "created": [
-        #                                 {
-        #                                     "index": 1,
-        #                                     "node": {
-        #                                         "children": [],
-        #                                         "id": "iJxAreDTAa",
-        #                                         "modified": 1599890956271,
-        #                                         "text": "",
-        #                                     },
-        #                                     "parentId": None,
-        #                                     "path": ["nodes", 1],
-        #                                 }
-        #                             ],
-        #                             "name": "create",
-        #                         }
-        #                     ],
-        #                     "documentId": "${docId}",
-        #                     "type": "CHANGE",
-        #                     "version": 6,
-        #                 }
-        #             },
-        #             "engineType": "MUBU",
-        #             "messageType": "BROADCAST",
-        #             "reqId": 14,
-        #             "requestId": "MESSAGE:${userId}:${memberId}:14",
-        #             "token": "${docId}",
-        #         }
-        #     )
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        # ),
-        # Step(
-        #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.${host}/v3/api/colla/message")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/plain, */*",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "505",
-        #             "content-type": "application/json;charset=UTF-8",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "${memberId}",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "request-id": "MESSAGE:${userId}:${memberId}:16",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-site",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-request-id": "4f054321-2eff-4d32-975a-607683e35bf1",
-        #         }
-        #     )
-        #     .with_json(
-        #         {
-        #             "context": {
-        #                 "appVersion": "1.0.0.391",
-        #                 "os": "macOS",
-        #                 "osVersion": "10.15.6",
-        #                 "platform": "web",
-        #             },
-        #             "data": {
-        #                 "message": {
-        #                     "content": [
-        #                         {
-        #                             "name": "update",
-        #                             "updated": [
-        #                                 {
-        #                                     "original": {
-        #                                         "id": "iJxAreDTAa",
-        #                                         "modified": 1599890956271,
-        #                                         "text": "",
-        #                                     },
-        #                                     "path": ["nodes", 1],
-        #                                     "updated": {
-        #                                         "id": "iJxAreDTAa",
-        #                                         "modified": 1599890956845,
-        #                                         "text": "<span>222</span>",
-        #                                     },
-        #                                 }
-        #                             ],
-        #                         }
-        #                     ],
-        #                     "documentId": "${docId}",
-        #                     "type": "CHANGE",
-        #                     "version": 7,
-        #                 }
-        #             },
-        #             "engineType": "MUBU",
-        #             "messageType": "BROADCAST",
-        #             "reqId": 16,
-        #             "requestId": "MESSAGE:${userId}:${memberId}:16",
-        #             "token": "${docId}",
-        #         }
-        #     )
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        # ),
-        # Step(
-        #     RunRequest("/v3/api/document/get_recent_list")
-        #     .post("https://api2.${host}/v3/api/document/get_recent_list")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/plain, */*",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "42",
-        #             "content-type": "application/json;charset=UTF-8",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-site",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-request-id": "eaf20656-5396-4fc5-b62a-f00399c3b95f",
-        #         }
-        #     )
-        #     .with_json({"documentId": "${docId}", "keywords": ""})
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        # ),
-        # Step(
-        #     RunRequest("/v3/api/document/get_recent_list")
-        #     .post("https://api2.${host}/v3/api/document/get_recent_list")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/plain, */*",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "42",
-        #             "content-type": "application/json;charset=UTF-8",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-site",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-request-id": "eaf20656-5396-4fc5-b62a-f00399c3b95f",
-        #         }
-        #     )
-        #     .with_json({"documentId": "${docId}", "keywords": ""})
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        # ),
-        # Step(
-        #     RunRequest("/v3/api/colla/message")
-        #     .post("https://api2.${host}/v3/api/colla/message")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/plain, */*",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "227",
-        #             "content-type": "application/json;charset=UTF-8",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "member-id": "${memberId}",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "request-id": "MESSAGE:${userId}:${memberId}:21",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-site",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-request-id": "bf16ee6f-e757-4a6d-ab92-6de2b260d60e",
-        #         }
-        #     )
-        #     .with_json(
-        #         {
-        #             "context": {
-        #                 "appVersion": "1.0.0.391",
-        #                 "os": "macOS",
-        #                 "osVersion": "10.15.6",
-        #                 "platform": "web",
-        #             },
-        #             "data": {},
-        #             "engineType": "MUBU",
-        #             "messageType": "UNWATCH",
-        #             "reqId": 21,
-        #             "requestId": "MESSAGE:${userId}:${memberId}:21",
-        #             "token": "${docId}",
-        #         }
-        #     )
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        # ),
-        # Step(
-        #     RunRequest("/list")
-        #     .get("/list")
-        #     .with_headers(
-        #         **{
-        #             "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "referer": "https://${host}/doc${docId}",
-        #             "sec-fetch-dest": "document",
-        #             "sec-fetch-mode": "navigate",
-        #             "sec-fetch-site": "same-origin",
-        #             "sec-fetch-user": "?1",
-        #             "upgrade-insecure-requests": "1",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #         }
-        #     )
-        #     .with_cookies(
-        #         **{
-        #             "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504": "1599890945",
-        #             "Hm_lvt_4426cbb0486a79ea049b4ad52d81b504": "1599876997",
-        #             "Jwt-Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "SESSION": "5d686e1f-826d-4fdc-b504-14b881b6f009",
-        #             "SLARDAR_WEB_ID": "99d88901-71fe-46ae-8f53-6c3ac398e654",
-        #             "_ga": "GA1.2.1447840665.1599876997",
-        #             "_gat": "1",
-        #             "_gat_UA-77727571-3": "1",
-        #             "_gid": "GA1.2.970346615.1599876997",
-        #             "country": "US",
-        #             "csrf_token": "8250e036-f280-4bdb-914f-f3cb77eade64",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "data_unique_id": "5a9ff0f2-cc52-4b79-9534-2c318e60bf0e",
-        #             "language": "en-US",
-        #             "mubu_inner": "1",
-        #             "reg_entrance": "https%3A%2F%2Fmubu.com%2F",
-        #             "reg_focusId": "8797e022-049d-4296-9054-17480ee6634",
-        #             "reg_prepareId": "17480ee60c8-17480ee6066-4296-9054-f90b2cf8efe7",
-        #             "s_v_web_id": "kez1gs78_cBo9G4q5_Vp2j_4z5H_BdsG_1hPeNK4vPVF0",
-        #             "user_persistence": "2fed7e44-9c7f-49a1-88d6-1287655322a5",
-        #         }
-        #     )
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        # ),
-        # Step(
-        #     RunRequest("/api/list/tip_new_update")
-        #     .post("/api/list/tip_new_update")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/javascript, */*; q=0.01",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "0",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/list",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-origin",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-requested-with": "XMLHttpRequest",
-        #         }
-        #     )
-        #     .with_cookies(
-        #         **{
-        #             "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504": "1599890945",
-        #             "Hm_lvt_4426cbb0486a79ea049b4ad52d81b504": "1599876997",
-        #             "Jwt-Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "SESSION": "5d686e1f-826d-4fdc-b504-14b881b6f009",
-        #             "SLARDAR_WEB_ID": "99d88901-71fe-46ae-8f53-6c3ac398e654",
-        #             "_ga": "GA1.2.1447840665.1599876997",
-        #             "_gat": "1",
-        #             "_gat_UA-77727571-3": "1",
-        #             "_gid": "GA1.2.970346615.1599876997",
-        #             "country": "US",
-        #             "csrf_token": "8250e036-f280-4bdb-914f-f3cb77eade64",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "data_unique_id": "5a9ff0f2-cc52-4b79-9534-2c318e60bf0e",
-        #             "language": "en-US",
-        #             "mubu_inner": "1",
-        #             "reg_entrance": "https%3A%2F%2Fmubu.com%2F",
-        #             "reg_focusId": "8797e022-049d-4296-9054-17480ee6634",
-        #             "reg_prepareId": "17480ee60c8-17480ee6066-4296-9054-f90b2cf8efe7",
-        #             "s_v_web_id": "kez1gs78_cBo9G4q5_Vp2j_4z5H_BdsG_1hPeNK4vPVF0",
-        #             "user_persistence": "2fed7e44-9c7f-49a1-88d6-1287655322a5",
-        #         }
-        #     )
-        #     .with_data("")
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        #     .assert_equal("body.msg", None)
-        # ),
-        # Step(
-        #     RunRequest("/api/list/get")
-        #     .post("/api/list/get")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/javascript, */*; q=0.01",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "38",
-        #             "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/list",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-origin",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-requested-with": "XMLHttpRequest",
-        #         }
-        #     )
-        #     .with_cookies(
-        #         **{
-        #             "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504": "1599890945",
-        #             "Hm_lvt_4426cbb0486a79ea049b4ad52d81b504": "1599876997",
-        #             "Jwt-Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "SESSION": "5d686e1f-826d-4fdc-b504-14b881b6f009",
-        #             "SLARDAR_WEB_ID": "99d88901-71fe-46ae-8f53-6c3ac398e654",
-        #             "_ga": "GA1.2.1447840665.1599876997",
-        #             "_gat": "1",
-        #             "_gat_UA-77727571-3": "1",
-        #             "_gid": "GA1.2.970346615.1599876997",
-        #             "country": "US",
-        #             "csrf_token": "8250e036-f280-4bdb-914f-f3cb77eade64",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "data_unique_id": "5a9ff0f2-cc52-4b79-9534-2c318e60bf0e",
-        #             "language": "en-US",
-        #             "mubu_inner": "1",
-        #             "reg_entrance": "https%3A%2F%2Fmubu.com%2F",
-        #             "reg_focusId": "8797e022-049d-4296-9054-17480ee6634",
-        #             "reg_prepareId": "17480ee60c8-17480ee6066-4296-9054-f90b2cf8efe7",
-        #             "s_v_web_id": "kez1gs78_cBo9G4q5_Vp2j_4z5H_BdsG_1hPeNK4vPVF0",
-        #             "user_persistence": "2fed7e44-9c7f-49a1-88d6-1287655322a5",
-        #         }
-        #     )
-        #     .with_data({"folderId": "0", "keywords": "", "sort": "name", "source": ""})
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        #     .assert_equal("body.msg", None)
-        # ),
-        # Step(
-        #     RunRequest("/api/message/get_message_unread")
-        #     .post("/api/message/get_message_unread")
-        #     .with_headers(
-        #         **{
-        #             "accept": "application/json, text/javascript, */*; q=0.01",
-        #             "accept-encoding": "gzip, deflate, br",
-        #             "accept-language": "en-US,en;q=0.9",
-        #             "content-length": "0",
-        #             "origin": "https://${host}",
-        #             "referer": "https://${host}/list",
-        #             "sec-fetch-dest": "empty",
-        #             "sec-fetch-mode": "cors",
-        #             "sec-fetch-site": "same-origin",
-        #             "user-agent": "HttpRunner/${get_httprunner_version()}",
-        #             "x-requested-with": "XMLHttpRequest",
-        #         }
-        #     )
-        #     .with_cookies(
-        #         **{
-        #             "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504": "1599890945",
-        #             "Hm_lvt_4426cbb0486a79ea049b4ad52d81b504": "1599876997",
-        #             "Jwt-Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
-        #             "SESSION": "5d686e1f-826d-4fdc-b504-14b881b6f009",
-        #             "SLARDAR_WEB_ID": "99d88901-71fe-46ae-8f53-6c3ac398e654",
-        #             "_ga": "GA1.2.1447840665.1599876997",
-        #             "_gat": "1",
-        #             "_gat_UA-77727571-3": "1",
-        #             "_gid": "GA1.2.970346615.1599876997",
-        #             "country": "US",
-        #             "csrf_token": "8250e036-f280-4bdb-914f-f3cb77eade64",
-        #             "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
-        #             "data_unique_id": "5a9ff0f2-cc52-4b79-9534-2c318e60bf0e",
-        #             "language": "en-US",
-        #             "mubu_inner": "1",
-        #             "reg_entrance": "https%3A%2F%2Fmubu.com%2F",
-        #             "reg_focusId": "8797e022-049d-4296-9054-17480ee6634",
-        #             "reg_prepareId": "17480ee60c8-17480ee6066-4296-9054-f90b2cf8efe7",
-        #             "s_v_web_id": "kez1gs78_cBo9G4q5_Vp2j_4z5H_BdsG_1hPeNK4vPVF0",
-        #             "user_persistence": "2fed7e44-9c7f-49a1-88d6-1287655322a5",
-        #         }
-        #     )
-        #     .with_data("")
-        #     .validate()
-        #     .assert_equal("status_code", 200)
-        #     .assert_equal("body.code", 0)
-        #     .assert_equal("body.msg", None)
-        # ),
+        Step(
+            RunRequest("/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/plain, */*",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "458",
+                    "content-type": "application/json;charset=UTF-8",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "member-id": "${memberId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
+                    "request-id": "MESSAGE:${userId}:${memberId}:9",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-request-id": "450b2a5d-3ad1-4b02-a4ae-5515cfbc2c2d",
+                }
+            )
+            .with_json(
+                {
+                    "context": {
+                        "appVersion": "1.0.0.391",
+                        "os": "macOS",
+                        "osVersion": "10.15.6",
+                        "platform": "web",
+                    },
+                    "data": {
+                        "message": {
+                            "content": [
+                                {
+                                    "created": [
+                                        {
+                                            "index": 0,
+                                            "node": {
+                                                "children": [],
+                                                "id": "THHy4n1NhO",
+                                                "modified": 1599890954289,
+                                                "text": "",
+                                            },
+                                            "parentId": None,
+                                            "path": ["nodes", 0],
+                                        }
+                                    ],
+                                    "name": "create",
+                                }
+                            ],
+                            "documentId": "${docId}",
+                            "type": "CHANGE",
+                            "version": 3,
+                        }
+                    },
+                    "engineType": "MUBU",
+                    "messageType": "BROADCAST",
+                    "reqId": 9,
+                    "requestId": "MESSAGE:${userId}:${memberId}:9",
+                    "token": "${docId}",
+                }
+            )
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+        ),
+        Step(
+            RunRequest("/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/plain, */*",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "503",
+                    "content-type": "application/json;charset=UTF-8",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "member-id": "${memberId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
+                    "request-id": "MESSAGE:${userId}:${memberId}:11",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-request-id": "db130e1e-3a13-44af-9aae-c3b8dcd463b8",
+                }
+            )
+            .with_json(
+                {
+                    "context": {
+                        "appVersion": "1.0.0.391",
+                        "os": "macOS",
+                        "osVersion": "10.15.6",
+                        "platform": "web",
+                    },
+                    "data": {
+                        "message": {
+                            "content": [
+                                {
+                                    "name": "update",
+                                    "updated": [
+                                        {
+                                            "original": {
+                                                "id": "THHy4n1NhO",
+                                                "modified": 1599890954289,
+                                                "text": "",
+                                            },
+                                            "path": ["nodes", 0],
+                                            "updated": {
+                                                "id": "THHy4n1NhO",
+                                                "modified": 1599890955265,
+                                                "text": "<span>1</span>",
+                                            },
+                                        }
+                                    ],
+                                }
+                            ],
+                            "documentId": "${docId}",
+                            "type": "CHANGE",
+                            "version": 4,
+                        }
+                    },
+                    "engineType": "MUBU",
+                    "messageType": "BROADCAST",
+                    "reqId": 11,
+                    "requestId": "MESSAGE:${userId}:${memberId}:11",
+                    "token": "${docId}",
+                }
+            )
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+        ),
+        Step(
+            RunRequest("/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/plain, */*",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "519",
+                    "content-type": "application/json;charset=UTF-8",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "member-id": "${memberId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
+                    "request-id": "MESSAGE:${userId}:${memberId}:12",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-request-id": "d1c85434-f03b-44b8-8a25-02814426e89d",
+                }
+            )
+            .with_json(
+                {
+                    "context": {
+                        "appVersion": "1.0.0.391",
+                        "os": "macOS",
+                        "osVersion": "10.15.6",
+                        "platform": "web",
+                    },
+                    "data": {
+                        "message": {
+                            "content": [
+                                {
+                                    "name": "update",
+                                    "updated": [
+                                        {
+                                            "original": {
+                                                "id": "THHy4n1NhO",
+                                                "modified": 1599890955265,
+                                                "text": "<span>1</span>",
+                                            },
+                                            "path": ["nodes", 0],
+                                            "updated": {
+                                                "id": "THHy4n1NhO",
+                                                "modified": 1599890955907,
+                                                "text": "<span>111</span>",
+                                            },
+                                        }
+                                    ],
+                                }
+                            ],
+                            "documentId": "${docId}",
+                            "type": "CHANGE",
+                            "version": 5,
+                        }
+                    },
+                    "engineType": "MUBU",
+                    "messageType": "BROADCAST",
+                    "reqId": 12,
+                    "requestId": "MESSAGE:${userId}:${memberId}:12",
+                    "token": "${docId}",
+                }
+            )
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+        ),
+        Step(
+            RunRequest("/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/plain, */*",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "460",
+                    "content-type": "application/json;charset=UTF-8",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "member-id": "${memberId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
+                    "request-id": "MESSAGE:${userId}:${memberId}:14",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-request-id": "4c0c2387-3f7c-4e9a-a0bf-46ad6686cea8",
+                }
+            )
+            .with_json(
+                {
+                    "context": {
+                        "appVersion": "1.0.0.391",
+                        "os": "macOS",
+                        "osVersion": "10.15.6",
+                        "platform": "web",
+                    },
+                    "data": {
+                        "message": {
+                            "content": [
+                                {
+                                    "created": [
+                                        {
+                                            "index": 1,
+                                            "node": {
+                                                "children": [],
+                                                "id": "iJxAreDTAa",
+                                                "modified": 1599890956271,
+                                                "text": "",
+                                            },
+                                            "parentId": None,
+                                            "path": ["nodes", 1],
+                                        }
+                                    ],
+                                    "name": "create",
+                                }
+                            ],
+                            "documentId": "${docId}",
+                            "type": "CHANGE",
+                            "version": 6,
+                        }
+                    },
+                    "engineType": "MUBU",
+                    "messageType": "BROADCAST",
+                    "reqId": 14,
+                    "requestId": "MESSAGE:${userId}:${memberId}:14",
+                    "token": "${docId}",
+                }
+            )
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+        ),
+        Step(
+            RunRequest("/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/plain, */*",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "505",
+                    "content-type": "application/json;charset=UTF-8",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "member-id": "${memberId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
+                    "request-id": "MESSAGE:${userId}:${memberId}:16",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-request-id": "4f054321-2eff-4d32-975a-607683e35bf1",
+                }
+            )
+            .with_json(
+                {
+                    "context": {
+                        "appVersion": "1.0.0.391",
+                        "os": "macOS",
+                        "osVersion": "10.15.6",
+                        "platform": "web",
+                    },
+                    "data": {
+                        "message": {
+                            "content": [
+                                {
+                                    "name": "update",
+                                    "updated": [
+                                        {
+                                            "original": {
+                                                "id": "iJxAreDTAa",
+                                                "modified": 1599890956271,
+                                                "text": "",
+                                            },
+                                            "path": ["nodes", 1],
+                                            "updated": {
+                                                "id": "iJxAreDTAa",
+                                                "modified": 1599890956845,
+                                                "text": "<span>222</span>",
+                                            },
+                                        }
+                                    ],
+                                }
+                            ],
+                            "documentId": "${docId}",
+                            "type": "CHANGE",
+                            "version": 7,
+                        }
+                    },
+                    "engineType": "MUBU",
+                    "messageType": "BROADCAST",
+                    "reqId": 16,
+                    "requestId": "MESSAGE:${userId}:${memberId}:16",
+                    "token": "${docId}",
+                }
+            )
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+        ),
+        Step(
+            RunRequest("/v3/api/document/get_recent_list")
+            .post("https://api2.${host}/v3/api/document/get_recent_list")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/plain, */*",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "42",
+                    "content-type": "application/json;charset=UTF-8",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-request-id": "eaf20656-5396-4fc5-b62a-f00399c3b95f",
+                }
+            )
+            .with_json({"documentId": "${docId}", "keywords": ""})
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+        ),
+        Step(
+            RunRequest("/v3/api/document/get_recent_list")
+            .post("https://api2.${host}/v3/api/document/get_recent_list")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/plain, */*",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "42",
+                    "content-type": "application/json;charset=UTF-8",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-request-id": "eaf20656-5396-4fc5-b62a-f00399c3b95f",
+                }
+            )
+            .with_json({"documentId": "${docId}", "keywords": ""})
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+        ),
+        Step(
+            RunRequest("/v3/api/colla/message")
+            .post("https://api2.${host}/v3/api/colla/message")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/plain, */*",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "227",
+                    "content-type": "application/json;charset=UTF-8",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "member-id": "${memberId}",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/doc${docId}",
+                    "request-id": "MESSAGE:${userId}:${memberId}:21",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-request-id": "bf16ee6f-e757-4a6d-ab92-6de2b260d60e",
+                }
+            )
+            .with_json(
+                {
+                    "context": {
+                        "appVersion": "1.0.0.391",
+                        "os": "macOS",
+                        "osVersion": "10.15.6",
+                        "platform": "web",
+                    },
+                    "data": {},
+                    "engineType": "MUBU",
+                    "messageType": "UNWATCH",
+                    "reqId": 21,
+                    "requestId": "MESSAGE:${userId}:${memberId}:21",
+                    "token": "${docId}",
+                }
+            )
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+        ),
+        Step(
+            RunRequest("/list")
+            .get("/list")
+            .with_headers(
+                **{
+                    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "referer": "https://${host}/doc${docId}",
+                    "sec-fetch-dest": "document",
+                    "sec-fetch-mode": "navigate",
+                    "sec-fetch-site": "same-origin",
+                    "sec-fetch-user": "?1",
+                    "upgrade-insecure-requests": "1",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                }
+            )
+            .with_cookies(
+                **{
+                    "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504": "1599890945",
+                    "Hm_lvt_4426cbb0486a79ea049b4ad52d81b504": "1599876997",
+                    "Jwt-Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "SESSION": "5d686e1f-826d-4fdc-b504-14b881b6f009",
+                    "SLARDAR_WEB_ID": "99d88901-71fe-46ae-8f53-6c3ac398e654",
+                    "_ga": "GA1.2.1447840665.1599876997",
+                    "_gat": "1",
+                    "_gat_UA-77727571-3": "1",
+                    "_gid": "GA1.2.970346615.1599876997",
+                    "country": "US",
+                    "csrf_token": "8250e036-f280-4bdb-914f-f3cb77eade64",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "data_unique_id": "5a9ff0f2-cc52-4b79-9534-2c318e60bf0e",
+                    "language": "en-US",
+                    "mubu_inner": "1",
+                    "reg_entrance": "https%3A%2F%2Fmubu.com%2F",
+                    "reg_focusId": "8797e022-049d-4296-9054-17480ee6634",
+                    "reg_prepareId": "17480ee60c8-17480ee6066-4296-9054-f90b2cf8efe7",
+                    "s_v_web_id": "kez1gs78_cBo9G4q5_Vp2j_4z5H_BdsG_1hPeNK4vPVF0",
+                    "user_persistence": "2fed7e44-9c7f-49a1-88d6-1287655322a5",
+                }
+            )
+            .validate()
+            .assert_equal("status_code", 200)
+        ),
+        Step(
+            RunRequest("/api/list/tip_new_update")
+            .post("/api/list/tip_new_update")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/javascript, */*; q=0.01",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "0",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/list",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-origin",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-requested-with": "XMLHttpRequest",
+                }
+            )
+            .with_cookies(
+                **{
+                    "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504": "1599890945",
+                    "Hm_lvt_4426cbb0486a79ea049b4ad52d81b504": "1599876997",
+                    "Jwt-Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "SESSION": "5d686e1f-826d-4fdc-b504-14b881b6f009",
+                    "SLARDAR_WEB_ID": "99d88901-71fe-46ae-8f53-6c3ac398e654",
+                    "_ga": "GA1.2.1447840665.1599876997",
+                    "_gat": "1",
+                    "_gat_UA-77727571-3": "1",
+                    "_gid": "GA1.2.970346615.1599876997",
+                    "country": "US",
+                    "csrf_token": "8250e036-f280-4bdb-914f-f3cb77eade64",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "data_unique_id": "5a9ff0f2-cc52-4b79-9534-2c318e60bf0e",
+                    "language": "en-US",
+                    "mubu_inner": "1",
+                    "reg_entrance": "https%3A%2F%2Fmubu.com%2F",
+                    "reg_focusId": "8797e022-049d-4296-9054-17480ee6634",
+                    "reg_prepareId": "17480ee60c8-17480ee6066-4296-9054-f90b2cf8efe7",
+                    "s_v_web_id": "kez1gs78_cBo9G4q5_Vp2j_4z5H_BdsG_1hPeNK4vPVF0",
+                    "user_persistence": "2fed7e44-9c7f-49a1-88d6-1287655322a5",
+                }
+            )
+            .with_data("")
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+            .assert_equal("body.msg", None)
+        ),
+        Step(
+            RunRequest("/api/list/get")
+            .post("/api/list/get")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/javascript, */*; q=0.01",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "38",
+                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/list",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-origin",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-requested-with": "XMLHttpRequest",
+                }
+            )
+            .with_cookies(
+                **{
+                    "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504": "1599890945",
+                    "Hm_lvt_4426cbb0486a79ea049b4ad52d81b504": "1599876997",
+                    "Jwt-Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "SESSION": "5d686e1f-826d-4fdc-b504-14b881b6f009",
+                    "SLARDAR_WEB_ID": "99d88901-71fe-46ae-8f53-6c3ac398e654",
+                    "_ga": "GA1.2.1447840665.1599876997",
+                    "_gat": "1",
+                    "_gat_UA-77727571-3": "1",
+                    "_gid": "GA1.2.970346615.1599876997",
+                    "country": "US",
+                    "csrf_token": "8250e036-f280-4bdb-914f-f3cb77eade64",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "data_unique_id": "5a9ff0f2-cc52-4b79-9534-2c318e60bf0e",
+                    "language": "en-US",
+                    "mubu_inner": "1",
+                    "reg_entrance": "https%3A%2F%2Fmubu.com%2F",
+                    "reg_focusId": "8797e022-049d-4296-9054-17480ee6634",
+                    "reg_prepareId": "17480ee60c8-17480ee6066-4296-9054-f90b2cf8efe7",
+                    "s_v_web_id": "kez1gs78_cBo9G4q5_Vp2j_4z5H_BdsG_1hPeNK4vPVF0",
+                    "user_persistence": "2fed7e44-9c7f-49a1-88d6-1287655322a5",
+                }
+            )
+            .with_data({"folderId": "0", "keywords": "", "sort": "name", "source": ""})
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+            .assert_equal("body.msg", None)
+        ),
+        Step(
+            RunRequest("/api/message/get_message_unread")
+            .post("/api/message/get_message_unread")
+            .with_headers(
+                **{
+                    "accept": "application/json, text/javascript, */*; q=0.01",
+                    "accept-encoding": "gzip, deflate, br",
+                    "accept-language": "en-US,en;q=0.9",
+                    "content-length": "0",
+                    "origin": "https://${host}",
+                    "referer": "https://${host}/list",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-origin",
+                    "user-agent": "HttpRunner/${get_httprunner_version()}",
+                    "x-requested-with": "XMLHttpRequest",
+                }
+            )
+            .with_cookies(
+                **{
+                    "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504": "1599890945",
+                    "Hm_lvt_4426cbb0486a79ea049b4ad52d81b504": "1599876997",
+                    "Jwt-Token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTQ0OTE2NCIsImV4cCI6MTYwMjQ4Mjk0NCwiaWF0IjoxNTk5ODkwOTQ0fQ.ot8AteuCcCv_0HpxGKfu8XUlPoador_5GD1EKFbo5nzGtYeefByF1DaTzI1EgpJQd4hI71prClWPBF7lUWicNQ",
+                    "SESSION": "5d686e1f-826d-4fdc-b504-14b881b6f009",
+                    "SLARDAR_WEB_ID": "99d88901-71fe-46ae-8f53-6c3ac398e654",
+                    "_ga": "GA1.2.1447840665.1599876997",
+                    "_gat": "1",
+                    "_gat_UA-77727571-3": "1",
+                    "_gid": "GA1.2.970346615.1599876997",
+                    "country": "US",
+                    "csrf_token": "8250e036-f280-4bdb-914f-f3cb77eade64",
+                    "data-unique-id": "2b076550-f4be-11ea-a24c-bd8a5840b3db",
+                    "data_unique_id": "5a9ff0f2-cc52-4b79-9534-2c318e60bf0e",
+                    "language": "en-US",
+                    "mubu_inner": "1",
+                    "reg_entrance": "https%3A%2F%2Fmubu.com%2F",
+                    "reg_focusId": "8797e022-049d-4296-9054-17480ee6634",
+                    "reg_prepareId": "17480ee60c8-17480ee6066-4296-9054-f90b2cf8efe7",
+                    "s_v_web_id": "kez1gs78_cBo9G4q5_Vp2j_4z5H_BdsG_1hPeNK4vPVF0",
+                    "user_persistence": "2fed7e44-9c7f-49a1-88d6-1287655322a5",
+                }
+            )
+            .with_data("")
+            .validate()
+            .assert_equal("status_code", 200)
+            .assert_equal("body.code", 0)
+            .assert_equal("body.msg", None)
+        ),
     ]
 
 

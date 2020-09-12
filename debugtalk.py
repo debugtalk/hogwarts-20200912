@@ -8,6 +8,10 @@ def get_httprunner_version():
     return __version__
 
 
+def gen_random_title():
+    return f"title_{random.randint(100000, 999999)}"
+
+
 def sum_two(m, n):
     return str(m + n)
 
